@@ -1,0 +1,7 @@
+{
+    "user": "root",
+    "password": "",
+    "host": "192.168.86.50",
+    "port": 3306,
+    "database": "pulsedev"
+}
