@@ -19,4 +19,9 @@ Config.Safes = {
         coords = {x = 447.05, y = -974.32, z = 31.0, h = 134.5, r = 1.0},
         transactions = {},
     },
+    ["cardealer"] = {
+        money = 0,
+        coords = {x = -787.54974365234, y = -215.99638366699, z = 37.079650878906, h = 298.22412109375, r= 1.0},
+        transactions = {},
+    }
 }

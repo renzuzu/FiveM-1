@@ -33,24 +33,26 @@ function DrawText3Ds(x, y, z, text)
 end
 
 function SetClosestSafe()
-    local pos = GetEntityCoords(PlayerPedId(), true)
+    local pos = GetEntityCoords(GetPlayerPed(-1), true)
     local current = nil
     local dist = nil
     for id, house in pairs(Config.Safes) do
         if current ~= nil then
-            if #(pos - vector3(Config.Safes[id].coords.x, Config.Safes[id].coords.y, Config.Safes[id].coords.z)) < dist then
+            if(GetDistanceBetweenCoords(pos, Config.Safes[id].coords.x, Config.Safes[id].coords.y, Config.Safes[id].coords.z, true) < dist)then
                 current = id
-                dist = #(pos - vector3(Config.Safes[id].coords.x, Config.Safes[id].coords.y, Config.Safes[id].coords.z))
+                dist = GetDistanceBetweenCoords(pos, Config.Safes[id].coords.x, Config.Safes[id].coords.y, Config.Safes[id].coords.z, true)
             end
         else
-            dist = #(pos - vector3(Config.Safes[id].coords.x, Config.Safes[id].coords.y, Config.Safes[id].coords.z))
+            dist = GetDistanceBetweenCoords(pos, Config.Safes[id].coords.x, Config.Safes[id].coords.y, Config.Safes[id].coords.z, true)
             current = id
         end
     end
     ClosestSafe = current
     if ClosestSafe ~= nil then
         if current == "police" then
-            IsAuthorized = exports['qb-policejob']:IsArmoryWhitelist()
+            IsAuthorized = exports['police']:IsArmoryWhitelist()
+        else
+            IsAuthorized = true
         end
     end
 end
@@ -69,20 +71,20 @@ end)
 Citizen.CreateThread(function()
     while true do
         local inRange = false
-        local ped = PlayerPedId()
+        local ped = GetPlayerPed(-1)
         local pos = GetEntityCoords(ped)
 
         if ClosestSafe ~= nil then
             if PlayerData.job.name == ClosestSafe then
                 if IsAuthorized then
                     local data = Config.Safes[ClosestSafe]
-                    local distance = #(pos - vector3(data.coords.x, data.coords.y, data.coords.z))
+                    local distance = GetDistanceBetweenCoords(pos, data.coords.x, data.coords.y, data.coords.z)
                     if distance < 20 then
                         inRange = true
                         if distance < Config.MinimumSafeDistance then
                             DrawText3Ds(data.coords.x, data.coords.y, data.coords.z, '~g~$'..data.money)
                             DrawText3Ds(data.coords.x, data.coords.y, data.coords.z - 0.1, '~b~/deposit~w~ - Put money in the safe')
-                            DrawText3Ds(data.coords.x, data.coords.y, data.coords.z - 0.2, '~b~/withdraw~w~ - Take money out of the safe')
+                            DrawText3Ds(data.coords.x, data.coords.y, data.coords.z - 0.2, '~b~/withdraw~w~ - Get money out of the safe')
                         end
                     end
                 else
@@ -102,10 +104,10 @@ RegisterNetEvent('qb-moneysafe:client:DepositMoney')
 AddEventHandler('qb-moneysafe:client:DepositMoney', function(amount)
     if ClosestSafe ~= nil then
         if IsAuthorized then
-            local ped = PlayerPedId()
+            local ped = GetPlayerPed(-1)
             local pos = GetEntityCoords(ped)
             local data = Config.Safes[ClosestSafe]
-            local distance = #(pos - vector3(data.coords.x, data.coords.y, data.coords.z))
+            local distance = GetDistanceBetweenCoords(pos, data.coords.x, data.coords.y, data.coords.z)
             
             if distance < Config.MinimumSafeDistance then
                 TriggerServerEvent('qb-moneysafe:server:DepositMoney', ClosestSafe, amount)
@@ -118,10 +120,10 @@ RegisterNetEvent('qb-moneysafe:client:WithdrawMoney')
 AddEventHandler('qb-moneysafe:client:WithdrawMoney', function(amount)
     if ClosestSafe ~= nil then
         if IsAuthorized then
-            local ped = PlayerPedId()
+            local ped = GetPlayerPed(-1)
             local pos = GetEntityCoords(ped)
             local data = Config.Safes[ClosestSafe]
-            local distance = #(pos - vector3(data.coords.x, data.coords.y, data.coords.z))
+            local distance = GetDistanceBetweenCoords(pos, data.coords.x, data.coords.y, data.coords.z)
             
             if distance < Config.MinimumSafeDistance then
                 TriggerServerEvent('qb-moneysafe:server:WithdrawMoney', ClosestSafe, amount)
