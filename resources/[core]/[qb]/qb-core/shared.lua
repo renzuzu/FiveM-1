@@ -768,7 +768,7 @@ QBShared.Items = {
 		["unique"] = true, 		
 		["useable"] = false, 	
 		["combinable"] = nil, 
-		"description"] = "This is a placeholder description"
+		["description"] = "This is a placeholder description"
 	},
 	["weapon_handcuffs"] = {
 		["name"] = "weapon_handcuffs", 		 	  	
@@ -1555,7 +1555,7 @@ QBShared.Items = {
 		["image"] = "weed-baggie.png", 			
 		["unique"] = false, 	
 		["useable"] = true, 	
-		"shouldClose"] = false,   
+		["shouldClose"] = false,   
 		["combinable"] = nil,   
 		["description"] = "A weed bag with 2g Amnesia"
 	},
@@ -1684,7 +1684,7 @@ QBShared.Items = {
 		["label"] = "Tunerchip", 				
 		["weight"] = 2000, 		
 		["type"] = "item", 		
-		"image"] = "tunerlaptop.png", 			
+		["image"] = "tunerlaptop.png", 			
 		["unique"] = true, 		
 		["useable"] = true, 	
 		["shouldClose"] = true,	   
@@ -2133,7 +2133,7 @@ QBShared.Items = {
 		["unique"] = true, 	    
 		["useable"] = false, 	
 		["shouldClose"] = true,    
-		"combinable"] = nil,   
+		["combinable"] = nil,   
 		["description"] = "Trigger of a SNS Pistol"
 	},
 	["snspistol_part_3"] = {
