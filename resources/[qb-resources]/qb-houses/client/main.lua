@@ -219,7 +219,7 @@ end
 
 Citizen.CreateThread(function()
     while true do
-        local pos = GetEntityCoords(PlayerPedId(), true)
+        local pos = GetEntityCoords(PlayerPedId())
         local inRange = false
 
         if closesthouse ~= nil then
@@ -320,7 +320,6 @@ Citizen.CreateThread(function()
                                     TriggerServerEvent("inventory:server:OpenInventory", "stash", CurrentHouse)
                                     TriggerEvent("inventory:client:SetCurrentStash", CurrentHouse)
                                 end
-                            end
                             elseif #(pos - vector3(stashLocation.x, stashLocation.y, stashLocation.z)) < 3 then
                                 DrawText3Ds(stashLocation.x, stashLocation.y, stashLocation.z, 'Stash')
                             end
@@ -594,7 +593,7 @@ function enterOwnedHouse(house)
     entering = true
     TriggerServerEvent('qb-houses:server:SetInsideMeta', house, true)
     Citizen.Wait(500)
-    SetRainFxIntensity(0.0)
+    SetRainLevel(0.0)
     TriggerEvent('qb-weathersync:client:DisableSync')
     TriggerEvent('qb-weed:client:getHousePlants', house)
     Citizen.Wait(100)
@@ -681,7 +680,7 @@ function enterNonOwnedHouse(house)
     POIOffsets = data[2]
     entering = true
     Citizen.Wait(500)
-    SetRainFxIntensity(0.0)
+    SetRainLevel(0.0)
     TriggerServerEvent('qb-houses:server:SetInsideMeta', house, true)
     TriggerEvent('qb-weathersync:client:DisableSync')
     TriggerEvent('qb-weed:client:getHousePlants', house)
