@@ -13,8 +13,8 @@
 
 
 -- shx_rpv için veritabanı yapısı dökülüyor
-CREATE DATABASE IF NOT EXISTS `shx_rpv` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `shx_rpv`;
+CREATE DATABASE IF NOT EXISTS `pulsedev` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `pulsedev`;
 
 -- tablo yapısı dökülüyor shx_rpv.character_current
 CREATE TABLE IF NOT EXISTS `character_current` (
