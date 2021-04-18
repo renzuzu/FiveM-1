@@ -998,18 +998,6 @@ QBShared.Items = {
 		["combinable"] = nil, 
 		["description"] = "This is a placeholder description"
 	},
-	["weapon_autoshotgun"] = {
-		["name"] = "weapon_autoshotgun", 	 		
-		["label"] = "Sweeper Shotgun", 			
-		["weight"] = 3000, 		
-		["type"] = "weapon", 	
-		["ammotype"] = "AMMO_SHOTGUN",			
-		["image"] = "sweepershotgun.png", 		
-		["unique"] = true, 		
-		["useable"] = false, 	
-		["combinable"] = nil, 
-		["description"] = "This is a placeholder description"
-	},
 	["weapon_bread"] = {
 		["name"] = "weapon_bread", 		 			
 		["label"] = "Baquette", 				
@@ -2659,7 +2647,6 @@ QBShared.Weapons = {
 	[GetHashKey("weapon_pipebomb")] 			 = {["name"] = "weapon_pipebomb", 		 	  	["label"] = "Pipe bom", 				["weight"] = 1000, 		["type"] = "weapon", 	["ammotype"] = nil,						["image"] = "placeholder.png", 		["unique"] = true, 		["useable"] = false, 	["description"] = "This is a placeholder description"},
 	[GetHashKey("weapon_poolcue")] 				 = {["name"] = "weapon_poolcue", 		 	  	["label"] = "Poolcue", 					["weight"] = 1000, 		["type"] = "weapon", 	["ammotype"] = nil,						["image"] = "placeholder.png", 		["unique"] = true, 		["useable"] = false, 	["description"] = "This is a placeholder description"},
 	[GetHashKey("weapon_wrench")] 				 = {["name"] = "weapon_wrench", 			 	["label"] = "Wrench", 				["weight"] = 1000, 		["type"] = "weapon", 	["ammotype"] = nil,						["image"] = "placeholder.png", 		["unique"] = true, 		["useable"] = false, 	["description"] = "This is a placeholder description"},
-	[GetHashKey("weapon_autoshotgun")] 		 	 = {["name"] = "weapon_autoshotgun", 	 		["label"] = "Sweeper Shotgun", 			["weight"] = 3000, 		["type"] = "weapon", 	["ammotype"] = "AMMO_SHOTGUN",			["image"] = "sweepershotgun.png", 	["unique"] = true, 		["useable"] = false, 	["description"] = "This is a placeholder description"},
 	[GetHashKey("weapon_bread")] 				 = {["name"] = "weapon_bread", 				 	["label"] = "Baquette", 				["weight"] = 1000, 		["type"] = "weapon", 	["ammotype"] = nil,						["image"] = "baquette.png", 		["unique"] = true, 		["useable"] = false, 	["description"] = "This is a placeholder description"},
 }
 
@@ -5370,19 +5357,7 @@ QBShared.Vehicles = {
 		["trunkspace"] = 60000,
 		["trunkslots"] = 40,
 		["shop"] = "pdm",
-	},				
-	["stafford"] = {
-		["name"] = "Stafford",
-		["brand"] = "Enus",
-		["model"] = "stafford",
-		["price"] = 45000,
-		["category"] = "sedans",
-		["hash"] = GetHashKey("stafford"),
-		["image"] = "https://vignette.wikia.nocookie.net/gtawiki/images/0/07/FaggioMod-GTAO-front.png",
-		["trunkspace"] = 60000,
-		["trunkslots"] = 40,
-		["shop"] = "pdm",
-	},					
+	},									
 	["camper"] = {
 		["name"] = "Stafford",
 		["brand"] = "Brute",
@@ -5892,18 +5867,7 @@ QBShared.VehicleModels = {
 		["trunkspace"] = 60000,
 		["trunkslots"] = 40,
 		["shop"] = "pdm",
-	},				
-	[GetHashKey("stafford")] = {
-		["name"] = "Stafford",
-		["price"] = 45000,
-		["category"] = "sedans",
-		["model"] = "stafford",
-		["hash"] = GetHashKey("stafford"),
-		["image"] = "https://vignette.wikia.nocookie.net/gtawiki/images/0/07/FaggioMod-GTAO-front.png",
-		["trunkspace"] = 60000,
-		["trunkslots"] = 40,
-		["shop"] = "pdm",
-	},					
+	},									
 	[GetHashKey("camper")] = {
 		["name"] = "Stafford",
 		["price"] = 1,
