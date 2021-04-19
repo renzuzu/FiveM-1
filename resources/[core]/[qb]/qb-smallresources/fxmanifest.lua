@@ -35,6 +35,7 @@ client_scripts {
 	"client/teleports.lua",
 	"client/weapdraw.lua",
     "client/weapdrop.lua",
+    "client/coords.lua",
 }
 
 data_file 'FIVEM_LOVES_YOU_4B38E96CC036038F' 'events.meta'
