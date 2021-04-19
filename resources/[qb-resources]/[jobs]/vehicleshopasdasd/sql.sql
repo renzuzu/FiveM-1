@@ -1,1 +1,0 @@
-ALTER TABLE `player_vehicles` ADD `finance_owed` INT(255) NULL DEFAULT NULL;
