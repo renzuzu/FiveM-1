@@ -174,13 +174,13 @@ end)
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        DisableControlAction(0, Keys["K"], true)
+        DisableControlAction(0, Keys["TAB"], true)
         DisableControlAction(0, Keys["1"], true)
         DisableControlAction(0, Keys["2"], true)
         DisableControlAction(0, Keys["3"], true)
         DisableControlAction(0, Keys["4"], true)
         DisableControlAction(0, Keys["5"], true)
-        if IsDisabledControlJustPressed(0, Keys["K"]) and not isCrafting then
+        if IsDisabledControlJustPressed(0, Keys["TAB"]) and not isCrafting then
             PlayToggleEmote()
             QBCore.Functions.GetPlayerData(function(PlayerData)
                 if not PlayerData.metadata["isdead"] and not PlayerData.metadata["inlaststand"] and not PlayerData.metadata["ishandcuffed"] then
@@ -271,8 +271,8 @@ Citizen.CreateThread(function()
                 end
             end)
         end
-            DisableControlAction(0, 37)
-        if IsDisabledControlJustReleased(1, 37) then
+            DisableControlAction(0, 48)
+        if IsDisabledControlJustReleased(1, 48) then
            TriggerEvent('khol:hotbar')
         end
 

@@ -373,13 +373,10 @@ DP.Dances = {
 }
 
 DP.Emotes = {
-   ["drink"] = {"mp_player_intdrink", "loop_bottle", "Drink", AnimationOptions =
+   ["drink"] = {"mp_player_inteat@pnq", "loop", "Drink", AnimationOptions =
    {
-        Prop = "prop_ld_flow_bottle",
-        PropBone = 18905,
-        PropPlacement = {0.12, 0.028, 0.001, 10.0, 175.0},
-        EmoteMoving = true,
-        EmoteLoop = true,
+       EmoteMoving = true,
+       EmoteDuration = 2500,
    }},
    ["beast"] = {"anim@mp_fm_event@intro", "beast_transform", "Beast", AnimationOptions =
    {
@@ -1303,14 +1300,10 @@ DP.Emotes = {
        EmoteDuration = 1000,
    }},
    ["golfswing"] = {"rcmnigel1d", "swing_a_mark", "Golf Swing"},
-
-   ["eat"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger_fp", "Eat", AnimationOptions =
+   ["eat"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Eat", AnimationOptions =
    {
-        Prop = "prop_cs_burger_01",
-        PropBone = 18905,
-        PropPlacement = {0.12, 0.028, 0.001, 10.0, 175.0},
-        EmoteMoving = true,
-        EmoteLoop = true,
+       EmoteMoving = true,
+       EmoteDuration = 3000,
    }},
    ["reaching"] = {"move_m@intimidation@cop@unarmed", "idle", "Reaching", AnimationOptions =
    {

@@ -15,5 +15,5 @@ server_scripts {
 }
 
 dependencies {
-	'qb-inventory'
+--	'qb-inventory'
 }
