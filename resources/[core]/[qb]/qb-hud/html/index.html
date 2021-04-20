@@ -2,10 +2,22 @@
 
 <head>
     <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-replace-svg="nest"></script>
     <link href="styles.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
+    <div class="money-container">
+        <div class="money-content">
+            <div class="money-cash">
+                <p class="money"><i class="fas fa-dollar-sign"></i>&nbsp;<span id="cash">0</span></p>
+            </div>
+            <div class="money-bank">
+                <p class="money"><i class="fas fa-university"></i>&nbsp;<span id="bank">0</span></p>
+            </div>
+        </div>
+    </div>
 
     <div id="statusHud">
         <div class="barHealth">
@@ -53,4 +65,5 @@
 </body>
 
 <script src="script.js" type="text/javascript"></script>
+<script src="money.js" type="text/javascript"></script>
 </html>

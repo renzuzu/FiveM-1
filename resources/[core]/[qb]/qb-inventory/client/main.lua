@@ -93,13 +93,13 @@ Citizen.CreateThread(function()
         if VendingMachine ~= nil then
             local VendingPos = GetEntityCoords(VendingMachine)
             local Distance = #(pos - vector3(VendingPos.x, VendingPos.y, VendingPos.z))
-            if Distance < 20 then
+            if Distance < 2 then
                 inRange = true
                 if Distance < 1.5 then
                     DrawText3Ds(VendingPos.x, VendingPos.y, VendingPos.z, '~g~E~w~ - Buy drinks')
                     if IsControlJustPressed(0, 38) then -- E
                         local ShopItems = {}
-                        ShopItems.label = "Drankautomaat"
+                        ShopItems.label = "Vending Machine"
                         ShopItems.items = Config.VendingItem
                         ShopItems.slots = #Config.VendingItem
                         TriggerServerEvent("inventory:server:OpenInventory", "shop", "Vendingshop_"..math.random(1, 99), ShopItems)
@@ -395,6 +395,7 @@ RegisterNetEvent("inventory:client:OpenInventory")
 AddEventHandler("inventory:client:OpenInventory", function(PlayerAmmo, inventory, other)
     if not IsEntityDead(PlayerPedId()) then
         ToggleHotbar(false)
+        TriggerScreenblurFadeIn(0)
         SetNuiFocus(true, true)
         if other ~= nil then
             currentOtherInventory = other.name
@@ -787,6 +788,7 @@ RegisterNUICallback("CloseInventory", function(data, cb)
         TriggerServerEvent("inventory:server:SaveInventory", "drop", CurrentDrop)
         CurrentDrop = 0
     end
+    TriggerScreenblurFadeOut(0)
     SetNuiFocus(false, false)
     inInventory = false
 end)

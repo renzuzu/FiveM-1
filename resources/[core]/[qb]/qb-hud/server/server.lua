@@ -1,6 +1,22 @@
 QBCore = nil
 TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
 
+-- Money
+
+QBCore.Commands.Add("cash", "Check your cash balance", {}, false, function(source, args)
+	local src = source
+	local xPlayer = QBCore.Functions.GetPlayer(src)
+	TriggerClientEvent('hud:client:ShowMoney', src, "cash")
+end)
+
+QBCore.Commands.Add("bank", "Check your bank balance", {}, false, function(source, args)
+	local src = source
+	local xPlayer = QBCore.Functions.GetPlayer(src)
+	TriggerClientEvent('hud:client:ShowMoney', src, "bank")
+end)
+
+-- Stress
+
 local ResetStress = false
 
 RegisterServerEvent("qb-hud:Server:UpdateStress")
